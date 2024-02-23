@@ -1,0 +1,47 @@
+<h1>Delivery Tracker</h1>
+
+<p> Know if something gets lost in the mail.</p>
+
+<hr>
+
+ <form action="/insert_delivery" method="post">
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <input type="text" id="description_box" name="query_description">
+      </div>
+
+      <div>
+        <label for="supposed_to_arrive_on_box">
+          Supposed to arrive on
+        </label>
+
+        <input type="date" id="supposed_to_arrive_on_box" name="query_supposed_to_arrive_on">
+      </div>
+
+      <div>
+        <label for="details_box">
+          Details
+        </label>
+
+        <textarea id="details_box" name="query_details" rows="3"></textarea>
+      </div>
+
+      <button>
+        Create delivery
+      </button>
+    </form>
+
+<% @list_of_waiting_deliveries.each do |delivery|%>
+  <%= delivery.description %>
+<% end %>
